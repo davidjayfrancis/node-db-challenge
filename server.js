@@ -9,6 +9,6 @@ app.use(express.json());
 
 app.use("/api/projects", projectsRouter);
 app.use("/api/resources", resourcesRouter);
-app.use("/api/projects/:id/tasks", tasksRouter);
+app.use("/api/projects/tasks", tasksRouter);
 
 module.exports = app;

@@ -8,12 +8,14 @@ exports.up = function(knex) {
     .createTable("projects", tbl => {
       tbl.increments();
       tbl.string("name", 128).notNullable();
+      // add boolean completed with new migration defaults to false
       tbl.string("description", 128);
     })
     .createTable("tasks", tbl => {
       tbl.increments();
       tbl.string("description", 128).notNullable();
       tbl.string("notes", 128);
+      // add boolean completed with new migration defaults to false
       tbl
         .integer("project_id")
         .unsigned()
